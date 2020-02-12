@@ -1,4 +1,4 @@
-# fspell-python
+# fspell
 Simple spell checker for Fongbe using Python.
 
 This spell checker uses a simple Python dictionary (`dict`) to store the valid
