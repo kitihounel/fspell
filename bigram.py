@@ -2,13 +2,13 @@ from itertools import islice
 from collections import Counter
 
 def bigrams(w):
-    """Return all the bigrams of a word"""
+    """Returns a list containing the bigrams of a word."""
     s = "#" + w + "$"
-    l = [a + b for a, b in zip(s, islice(s, 1, None))]
+    l = [x + y for x, y in zip(s, islice(s, 1, None))]
     return l
 
-def similarity_score(w1, w2):
-    """Compute the number of bigrams two words have in common"""
-    c1 = Counter(bigrams(w1))
-    c2 = Counter(bigrams(w2))
-    return sum(min(c1[k], c2[k]) for k in c1)
+def similarity_score(v, w):
+    """Computes the number of bigrams two words have in common."""
+    c = Counter(bigrams(v))
+    t = Counter(bigrams(w))
+    return sum(min(c[k], t[k]) for k in c)

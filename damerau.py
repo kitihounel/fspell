@@ -1,5 +1,5 @@
 def damerau_lev(seq1, seq2):
-    """Calculate the Damerau-Levenshtein distance between two sequences.
+    """Calculates the Damerau-Levenshtein distance between two sequences.
 
     This distance is the number of additions, deletions, substitutions,
     and transpositions needed to transform the first sequence into the
