@@ -1,7 +1,7 @@
 # fspell
 Simple spell checker for Fongbe using Python.
 
-This spell checker uses a simple Python dictionary (`dict`) to store the valid
+This spell checker uses a simple Python set (`set`) to store the valid
 words and a BK-Tree to get suggestions for unknown words. Suggestions are
 sorted using bigrams. The first suggestion is the word with the more bigrams
 in common with the unknown word.
@@ -13,7 +13,7 @@ in common with the unknown word.
 ## How Does It Work?
 The program used a predefined set of files.
 - The file `words` contains the list of valid words. It is the base dictionary. 
-- The file `misspells` contains the words you want suggestions for.
+- The file `misspells` contains the words you want suggestions for (you can change its content at will).
 - A third file `words.sample` contains a sample of words from the file `words`.
   It was used when testing the program.
 

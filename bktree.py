@@ -10,7 +10,7 @@ class _Node:
         self.key = strip_tones(w)
         self.children = {}
 
-    def add_word(self, w):
+    def insert(self, w):
         k = strip_tones(w)
         d = damerau_lev(self.key, k)
         if d == 0:
@@ -35,10 +35,10 @@ class _Node:
         while len(q) != 0:
             current = q.popleft()
             d = damerau_lev(current.key, key)
-            if d <= t:
+            if d <= t and len(current.key) != 0: # Filter empty string.
                 score = similarity_score(key, current.key)
                 a.extend([(score, w) for w in current.words])
-            lo, hi = max(0, d - t), d + t
+            lo, hi = max(1, d - t), d + t
             for j in range(lo, hi + 1):
                 child = current.children.get(j, None)
                 if child is not None:
@@ -55,7 +55,7 @@ class BKTree:
         if w in self.words:
             return
         self.words.add(w)
-        self.root.add_word(w)
+        self.root.insert(w)
 
     def contains(self, w):
         return w in self.words

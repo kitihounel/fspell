@@ -20,4 +20,4 @@ for w in words:
 
 for s in mispells:
     a = tree.get_suggestions(s, 10)
-    print(s, "=>", a)
+    print("{}: {}".format(s, ", ".join(a)))
