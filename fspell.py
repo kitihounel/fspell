@@ -3,13 +3,13 @@ from bktree import BKTree
 def get_words():
     lines = []
     with open("./words", "r", encoding="utf-8") as f:
-        lines.extend(l[:-1] for l in f.readlines())
+        lines.extend(l.strip() for l in f)
     return lines
 
 def get_misspells():
     lines = []
     with open("./misspells", "r", encoding="utf-8") as f:
-        lines.extend(l[:-1] for l in f.readlines())
+        lines.extend(l.strip() for l in f)
     return lines
 
 words = get_words()
