@@ -18,10 +18,12 @@ The program used a predefined set of files.
   It was used when testing the program.
 
 ## About Performance
-The program takes 1.5s on our computer to load the words from the dictionary
+With CPython, the program takes 1.5s on our computer to load the words from the dictionary
 and create the BK-Tree. It takes 1.482s to find suggestions for the words in
 our default `misspells` file. Our computer was running under Ubuntu 16.04 with an
 Intel Core I5 processor and 8 Gio of memory.
+
+If you want the program to run faster, you can use PyPy.
 
 ## Useful Links
 We have used functions and data structures presented in the following pages.
