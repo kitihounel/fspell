@@ -35,7 +35,7 @@ class _Node:
         while len(q) != 0:
             current = q.popleft()
             d = damerau_lev(current.key, key)
-            # Empty string and words that require more than 3 deletions are filtered.
+            # Empty string and words that require more than 3 insertions or deletions are filtered.
             if d <= t and len(current.key) != 0 and abs(len(key) - len(current.key)) <= 3:
                 score = similarity_score(key, current.key)
                 a.extend((score, w) for w in current.words)
