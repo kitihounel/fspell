@@ -8,7 +8,9 @@ def bigrams(w):
     return l
 
 def similarity_score(v, w):
-    """Computes the number of bigrams two words have in common."""
-    c = Counter(bigrams(v))
-    t = Counter(bigrams(w))
-    return sum(min(c[k], t[k]) for k in c)
+    """Computes Sorenson-Dice coefficient of two words."""
+    vb = bigrams(v)
+    wb = bigrams(w)
+    vc = Counter(vb)
+    wc = Counter(wb)
+    return  2 * sum(min(vc[k], wc[k]) for k in wc) / (len(vb) + len(wb))

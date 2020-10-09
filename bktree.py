@@ -2,7 +2,7 @@ from collections import deque
 from itertools import islice
 from fspell_utils import strip_tones
 from damerau import damerau_lev
-from bigram import similarity_score
+from bigrams import similarity_score
 
 class _Node:
     def __init__(self, w):

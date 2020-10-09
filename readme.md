@@ -3,19 +3,17 @@ Simple spell checker for Fongbe using Python.
 
 This spell checker uses a simple Python set (`set`) to store the valid
 words and a BK-Tree to get suggestions for unknown words. Suggestions are
-sorted using bigrams. The first suggestion is the word with the more bigrams
-in common with the unknown word.
+ranked using Sorenson-Dice coefficient.
 
 ## How to Use
 - Open a terminal and change working directory to the project directory.
 - Simply run `python3 fspell.py`
 
 ## How Does It Work?
-The program used a predefined set of files.
+The program uses a predefined set of files.
 - The file `words` contains the list of valid words. It is the base dictionary. 
-- The file `misspells` contains the words you want suggestions for (you can change its content at will).
-- A third file `words.sample` contains a sample of words from the file `words`.
-  It was used when testing the program.
+- The file `misspells` contains the words you want suggestions for,
+  one per line (you can change its content at will).
 
 ## About Performance
 With CPython, the program takes 1.5s on our computer to load the words from the dictionary
@@ -30,6 +28,8 @@ We have used functions and data structures presented in the following pages.
 - Damerau-Levenshtein distance,
   https://web.archive.org/web/20150909134357/http://mwh.geek.nz:80/2009/04/26/python-damerau-levenshtein-distance/
 - [BK-Tree](https://www.geeksforgeeks.org/bk-tree-introduction-implementation/)
+- Sorenson-Dice coefficient, http://www.catalysoft.com/articles/StrikeAMatch.html and
+  https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient
 
 ## License
 This work is under the MIT licence. A copy of the licence is available in the `licence` file.
