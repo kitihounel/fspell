@@ -1,5 +1,7 @@
 from bktree import BKTree
 
+MAX_EDIT_DISTANCE = 3
+
 def get_words():
     lines = []
     with open("./words", "r", encoding="utf-8") as f:
@@ -14,7 +16,7 @@ def get_misspells():
 
 words = get_words()
 mispells = get_misspells()
-tree = BKTree(4, "")
+tree = BKTree(MAX_EDIT_DISTANCE, "")
 for w in words:
     tree.add_word(w)
 
