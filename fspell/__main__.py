@@ -1,4 +1,4 @@
-from bktree import BKTree
+from .bktree import BKTree
 
 MAX_EDIT_DISTANCE = 3
 
