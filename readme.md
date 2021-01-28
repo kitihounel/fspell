@@ -7,7 +7,7 @@ ranked using Sorenson-Dice coefficient.
 
 ## How to Use
 - Open a terminal and change working directory to the project directory.
-- Simply run `python3 -m fspell.py`
+- Simply run `python3 -m fspell`
 
 ## How Does It Work?
 The program uses a predefined set of files.
